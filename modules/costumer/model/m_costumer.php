@@ -63,4 +63,16 @@ class m_costumer extends base
 		$this->db->where('costumer_id',$id);
 		return $this->db->delete('tb_costumer');
 	}
+
+	public function check_email($usr)
+	{		
+		$this->db->where("costumer_email", $usr);
+		$data = $this->db->get("tb_costumer");
+	
+		
+		if($this->db->count > 0) {			
+			return FALSE;
+		}
+		return TRUE;
+	}
 }

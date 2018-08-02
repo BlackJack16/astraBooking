@@ -25,7 +25,7 @@
 <div class="content">
     <div class="hpanel hred">
 	<div class="panel-tool">
-			<a href="?m=add" class="btn btn-danger btn-flat"><i class="fa fa-plus"></i> Tambah Data</a>
+			<a href="?m=add&id" class="btn btn-danger btn-flat"><i class="fa fa-plus"></i> Tambah Data</a>
 		</div>
 		<div class="panel-body">
 						<table class="table table-striped table-bordered table-hover <?php echo $data != FALSE ? 'dataTable':NULL;?>">

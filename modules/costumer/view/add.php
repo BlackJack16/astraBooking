@@ -13,14 +13,13 @@
                         <a href="<?php echo ROOT?>costumer">Costumer</a>
                     </li>
                     <li class="active">
-                        <span>Detail</span>
+                        <span>Tambah</span>
                     </li>
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
-                Detail costumer
+                Tambah Costumer
             </h2>
-            <small>Detail Data costumer</small>
         </div>
     </div>
 </div>
@@ -29,59 +28,63 @@
 	
 	<div class="hpanel hred">
 		<div class="panel-body">
-			<form class="form-horizontal" action="?m=edit_save" method="post" autocomplete="off">
-				<input type="hidden" name="id" value="<?php echo $d['costumer_id'];?>" />
+			<form class="form-horizontal" action="?m=registrasi" method="post" autocomplete="off">
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><strong>Costumer Identitas <span class="required">*</span></strong></label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" required readonly   name="nama" readonlyplaceholder="Nama costumer" value="<?php echo $d['costumer_identitas'];?>" />
+						<input type="text" class="form-control" required   name="id" placeholder="Identitas costumer"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><strong>Nama costumer <span class="required">*</span></strong></label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" required  readonly name="nama" placeholder="Nama costumer" value="<?php echo $d['costumer_nama'];?>"  />
+						<input type="text" class="form-control" required  name="nama" placeholder="Nama costumer"/>
 					</div>
 				</div>
+
 				<div class="form-group">
-					<label class="col-sm-3 control-label"><strong>Tgl. Lahir <span class="required">*</span></strong></label>
-					<div class="col-sm-9">
-						<input type="text" class="form-control" required  readonly name="tgl" placeholder="Tgl Lahir" value="<?php echo date_format(date_create($d['costumer_tgl']),"d/m/Y");?>"  />
-					</div>
+					<label class="col-sm-3 control-label"><strong>Tgl. Lahir<span class="required">*</span></strong></label>
+					<div class="col-sm-6 input-group date">
+                        <input style="margin-left: 15px;" type="text" name="tgl_lahir" data-date-format="yyyy-mm-dd"  class="form-control datepicker" placeholder="Tgl. Lahir"><span class="input-group-addon"><i style="padding-left: 20px"  class="glyphicon glyphicon-th"></i></span>
+                   </div>
 				</div>
-
-				
-
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><strong>Telepon <span class="required">*</span></strong></label>
 					<div class="col-sm-9">
-						<input type="text" class="form-control" required readonly name="telp" placeholder="Telepon" value="<?php echo $d['costumer_telp'];?>" />
+						<input type="text" class="form-control" required name="telp" placeholder="Telepon"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><strong>Alamat </strong></label>
 					<div class="col-sm-9">
-						<textarea class="form-control" name="alamat" readonly="" placeholder="Alamat" rows="3"><?php echo $d['costumer_alamat'];?></textarea>
+						<textarea class="form-control" name="alamat" placeholder="alamat" rows="3"></textarea>
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label"><strong>Email </strong></label>
-					<div class="col-sm-9">
-						<input type="email" class="form-control" readonly placeholder="Email" value="<?php echo $d['costumer_email'];?>" />
-					</div>
-				</div>
-
+				
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><strong>Jenis Kelamin </strong></label>
 					<div class="col-sm-9">
-						<input type="email" class="form-control" readonly placeholder="Email" value="<?php echo $d['costumer_jk'];?>" />
+						<input class="form-control" name="jk" placeholder="Jenis Kelamin" />
 					</div>
 				</div>
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label"><strong>Agama </strong></label>
 					<div class="col-sm-9">
-						<input type="email" class="form-control" readonly placeholder="Email" value="<?php echo $d['costumer_agama'];?>" />
+						<input class="form-control" name="agama" placeholder="Agama"/>
+					</div>
+				</div>
+				<hr>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><strong>Email<span class="required">*</span></strong></label>
+					<div class="col-sm-9">
+						<input type="email" class="form-control"  name="email" placeholder="Email" required/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label"><strong>Password<span class="required">*</span></strong></label>
+					<div class="col-sm-9">
+						<input class="form-control"  name="pwd" placeholder="Password" required/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -94,66 +97,6 @@
 				</div>
 			</form>
 		</div>
-	</div>
-
-
-	<div class="hpanel hred">
-	<div class="normalheader small-header" style="padding:0!important;">
-    <div class="hpanel">
-        <div class="panel-body">
-           
-            <h2 class="font-light m-b-xs">
-                Detail Kendaraan
-            </h2>
-            <small>Detail Data Kendaraan Costumer</small>
-        </div>
-    </div>
-</div>
-		<div class="panel-body">
-						<table class="table table-striped table-bordered table-hover <?php echo $data != FALSE ? 'dataTable':NULL;?>">
-							<colgroup>
-								<col class="col-sm-1" />
-								<col class="col-sm-2 text-center" />
-								<col class="col-sm-2" />
-								<col class="col-sm-1" />
-								<col class="col-sm-1" />
-							</colgroup>
-							<thead>
-										<tr>
-											<th >No </th>
-											<th>Kendaraan costumer</th>
-											<th>No polisi</th>
-											<th>Tahun</th>
-											
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-										if($kendaraan)
-										{
-											$no = 1;
-											foreach($kendaraan as $d)
-											{
-											?>
-										<tr>
-											<td><?php echo $no;?></td>
-											<td><?php echo $d['variant_nama'];?></td>
-											<td><?php echo $d['kendCos_nopol'];?></td>
-											<td><?php echo date_format(date_create($d['kendCos_thn']),"d/m/Y");?></td>
-											
-										</tr>
-											<?php
-											$no++;}
-										}
-										else
-										{
-											echo '<tr><td colspan=6>Tidak Ada Data</td></tr>';
-										}
-										?>
-									</tbody>
-						</table>
-				</div>
-    	</div>
-					
+	</div>				
 </div>
 
