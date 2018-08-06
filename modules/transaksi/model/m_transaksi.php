@@ -34,7 +34,7 @@ class m_transaksi extends base
 	public function get_detail_part($id=NULL)
 	{
 		$this->db->where("dsparepart_transaksi", $id);
-		$this->db->join("tb_sparepart","dsparepart_sparepart= 	sparepart_id");
+		$this->db->join("tb_sparepart","dsparepart_sparepart=sparepart_id");
 		$data =  $this->db->get('tb_detail_sparepart');
 
 		if($this->db->count > 0) {
@@ -48,7 +48,7 @@ class m_transaksi extends base
 		public function get_detail_service($id=NULL)
 		{
 			$this->db->where("dservice_transaksi", $id);
-			$this->db->join("tb_service","dservice_service= 	service_id");
+			$this->db->join("tb_service","dservice_service=service_id");
 			$data =  $this->db->get('tb_detail_service');
 
 			if($this->db->count > 0) {
